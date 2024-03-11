@@ -8,7 +8,7 @@ interface PageHeaderProps extends PropsWithChildren {}
 
 export function PageHeader(props: PageHeaderProps) {
   return (
-    <header class="w-full h-[68px] z-20 bg-transparent backdrop-blur-sm fixed">
+    <header class="w-full h-[68px] z-20 bg-transparent backdrop-blur-sm fixed border-b border-primary/20">
       <BaseContainer otherClass="p-2 justify-between" cvaVariants={{ display: 'flexRowCenter' }}>
         <a class="flex items-center flex-row gap-2 text-lg font-bold h-full" href="/">
           <Vite.Image src="resources/images/mountain-logo.webp" class="w-[58px]"></Vite.Image>

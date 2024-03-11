@@ -4,12 +4,12 @@ import FsPostService from './fs_post_service.js'
 import { RawBlogPost } from './fs_post_service.js'
 import { MarkdownFile } from '@dimerapp/markdown'
 
-interface MarkdownFileMetas extends Omit<DatabaseEntry, 'path'> {
+export interface MarkdownFileMetas extends Omit<DatabaseEntry, 'path'> {
   summary?: string
   date?: string
 }
 
-interface MarkdownFileProcessed {
+export interface MarkdownFileProcessed {
   metas: MarkdownFileMetas
   content: string
 }
