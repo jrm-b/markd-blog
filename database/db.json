@@ -1,20 +1,14 @@
 [
   {
-    "title": "Premier article markdown",
-    "slug": "premier-article",
+    "title": "Comprendre typescript - un guide pour les développeurs web",
+    "slug": "comprendre-typescript",
     "category": "development",
-    "path": "./development/premier-article.md"
+    "path": "./development/comprendre-typescript.md"
   },
   {
-    "title": "Deuxième article markdown",
-    "slug": "deuxième-article",
+    "title": "Kotlin - le futur du développement android",
+    "slug": "kotlin-le-futur-pour-android",
     "category": "development",
-    "path": "./development/deuxième-article.md"
-  },
-  {
-    "title": "Troisième article markdown",
-    "slug": "troisième-article",
-    "category": "development",
-    "path": "./development/troisième-article.md"
+    "path": "./development/kotlin-le-futur-pour-android.md"
   }
 ]

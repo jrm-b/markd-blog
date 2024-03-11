@@ -33,22 +33,22 @@ export default class FsDatabaseService {
     }
 
     entries.forEach((entry, index) => {
-      if (!entry.slug) {
+      if (!entry.slug || entry.slug === '') {
         throw new Error(`Invalid database entry at index ${index}. Missing "slug" !`, {
           cause: 'E_INVALID_DATABASE',
         })
       }
-      if (!entry.title) {
+      if (!entry.title || entry.title === '') {
         throw new Error(`Invalid database entry at index ${index}. Missing "title" !`, {
           cause: 'E_INVALID_DATABASE',
         })
       }
-      if (!entry.path) {
+      if (!entry.path || entry.path === '') {
         throw new Error(`Invalid database entry at index ${index}. Missing "path" !`, {
           cause: 'E_INVALID_DATABASE',
         })
       }
-      if (!entry.category) {
+      if (!entry.category || entry.category === '') {
         throw new Error(`Invalid database entry at index ${index}. Missing "category" !`, {
           cause: 'E_INVALID_DATABASE',
         })
