@@ -2,19 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Atkinson';
+  src: url(../fonts/Atkinson-Hyperlegible/woff2/Atkinson-Hyperlegible-Bold-102a.woff2)
+    format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url(../fonts/Atkinson-Hyperlegible/woff2/Atkinson-Hyperlegible-BoldItalic-102a.woff2)
+    format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url(../fonts/Atkinson-Hyperlegible/woff2/Atkinson-Hyperlegible-Italic-102a.woff2)
+    format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  src: url(../fonts/Atkinson-Hyperlegible/woff2/Atkinson-Hyperlegible-Regular-102a.woff2)
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(sansation_bold.woff);
+  font-weight: bold;
+  font-style: normal;
+}
+
 @layer base {
+  :root {
+    --background-color: 60 20% 98%;
+    --text-color: 240 4% 13%;
+    --primary-color: 25 89% 73%;
+    --secondary-color: 166 23% 60%;
+    --main-font: 'Atkinson', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
+  }
+  @media (prefers-color-scheme: dark) {
     :root {
-        --background-color: hsl(60, 20%, 98%);
-        --text-color: hsl(205, 23%, 29%);
-        --primary-color: hsl(25, 89%, 73%);
-        --secondary-color: hsl(166, 23%, 60%);
+      --background-color: 240 4% 13%;
+      --text-color: 60 20% 98%;
+      --primary-color: 25 89% 73%;
+      --secondary-color: 166 23% 60%;
     }
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --background-color: hsl(205, 23%, 29%);
-            --text-color: hsl(60, 20%, 98%);
-            --primary-color: hsl(25, 89%, 73%);
-            --secondary-color: hsl(166, 23%, 60%);
-        }
-    }
+  }
 }

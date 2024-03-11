@@ -8,5 +8,6 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import { IndexPage } from '../resources/views/pages/index.js'
 
-router.get('/', async () => "It's work")
+router.get('/', async () => <IndexPage></IndexPage>)
