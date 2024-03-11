@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Premier article markdown",
+    "slug": "premier-article",
+    "category": "development",
+    "path": "./development/premier-article.md"
+  },
+  {
+    "title": "Deuxième article markdown",
+    "slug": "deuxième-article",
+    "category": "development",
+    "path": "./development/deuxième-article.md"
+  },
+  {
+    "title": "Troisième article markdown",
+    "slug": "troisième-article",
+    "category": "development",
+    "path": "./development/troisième-article.md"
+  }
+]
