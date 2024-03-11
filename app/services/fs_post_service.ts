@@ -1,56 +1,45 @@
 import fs from 'node:fs'
 import FsDatabaseService, { DatabaseEntry } from './fs_database_service.js'
 
-interface RawBlogPost {
+export interface RawBlogPost {
   metas: DatabaseEntry
   content: string
 }
 
 export default class FsPostService {
-  #booted: boolean = false
   #entryPoints: DatabaseEntry[] = []
-  #posts: RawBlogPost[] = []
 
   async initDb(dbEntrypoint: string) {
     this.#entryPoints = await new FsDatabaseService(dbEntrypoint).init()
-    this.#booted = true
     return this
   }
 
   async getAll() {
-    if (!this.#booted) {
-      return new Error(
-        'You need to initialize database by providing an entrypoint to initDb() method before trying to collect posts.',
-        {
-          cause: 'E_INVALID_DATABASE',
-        }
-      )
-    }
+    const posts: RawBlogPost[] = []
 
     this.#entryPoints.forEach((entry) => {
       const post = this.#toJSON(entry)
-      this.#posts = [...this.#posts, post]
+      posts.push(post)
     })
-    return this.#posts
+    return posts
   }
 
-  async getBySlud(slug: string) {
-    const entry = this.#entryPoints.filter((entry) => entry.slug === slug)[0]
-
-    if (!entry) {
-      throw new Error(`File with slug "${slug}" doesn't exist.`, {
+  async getBySlug(slug: string): Promise<RawBlogPost> {
+    try {
+      const entry = this.#entryPoints.filter((entry) => entry.slug === slug)[0]
+      const post = this.#toJSON(entry)
+      return post
+    } catch (error) {
+      throw new Error(`Invalid slug provided. Can't find file with slug: "${slug}"`, {
         cause: 'E_INVALID_DATABASE_QUERY',
       })
     }
-
-    const post = this.#toJSON(entry)
-    return post
   }
 
   #toJSON(entry: DatabaseEntry): RawBlogPost {
     const content = fs.readFileSync(entry.path, 'utf-8')
     const post: RawBlogPost = {
-      metas: { ...entry },
+      metas: entry,
       content,
     }
     return post

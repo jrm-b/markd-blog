@@ -13,12 +13,12 @@ import router from '@adonisjs/core/services/router'
 
 router.get('/', async () => {
   try {
-    const db = await new FsPostService().initDb('database/db.json')
-    const posts = await db.getAll()
-    const post = await db.getBySlud('comprendre-typescript')
+    const fileService = await new FsPostService().initDb('database/db.json')
+    const posts = await fileService.getAll()
+    const post = await fileService.getBySlug('comprendre-typescript')
     console.log(post)
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
   return <IndexPage></IndexPage>
 })
