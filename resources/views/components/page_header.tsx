@@ -17,6 +17,7 @@ export function PageHeader(props: PageHeaderProps) {
         <Button
           otherClass="bg-primary hover:bg-primary/90 text-customback/80"
           value={SunMedium}
+          id="toggle-dark-mode"
         ></Button>
         {props.children}
       </BaseContainer>

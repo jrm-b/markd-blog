@@ -19,6 +19,7 @@ export function Button(props: ButtonProps) {
           : styleButton({ ...cvaVariants })
       }
       type={props.type || 'button'}
+      id={props.id}
     >
       {props.value}
       {props.children}

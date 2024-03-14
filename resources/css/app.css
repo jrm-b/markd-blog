@@ -58,4 +58,18 @@
       --secondary-color: 166 23% 60%;
     }
   }
+
+  :root.light {
+    --background-color: 60 20% 98%;
+    --text-color: 240 4% 13%;
+    --primary-color: 25 89% 73%;
+    --secondary-color: 166 23% 60%;
+  }
+
+  :root.dark {
+    --background-color: 240 4% 13%;
+    --text-color: 60 20% 98%;
+    --primary-color: 25 89% 73%;
+    --secondary-color: 166 23% 60%;
+  }
 }
