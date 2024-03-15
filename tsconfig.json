@@ -21,6 +21,7 @@
       "#start/*": ["./start/*.js"],
       "#config/*": ["./config/*.js"]
     },
+    "lib": ["DOM"],
     "jsx": "react",
     "jsxFactory": "Html.createElement",
     "jsxFragmentFactory": "Html.Fragment",

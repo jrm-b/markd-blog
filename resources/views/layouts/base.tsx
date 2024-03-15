@@ -17,7 +17,7 @@ export function BaseLayout(props: BaseLayoutProps) {
           <meta name="description" content={props.description || 'Provide me a description'} />
           <title>{props.title || 'Provide me a title'}</title>
           <Vite.Entrypoint
-            entrypoints={['resources/css/app.css', 'resources/js/app.js']}
+            entrypoints={['resources/css/app.css', 'resources/js/app.ts']}
           ></Vite.Entrypoint>
         </head>
         <body class="bg-customback font-atkinson text-customtext">{props.children}</body>
